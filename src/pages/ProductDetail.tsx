@@ -3,17 +3,27 @@ import { useParams } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug } from "@/data/products";
+import { useCart } from "@/context/CartContext";
+import { useToast } from "@/hooks/use-toast";
 import { Minus, Plus } from "lucide-react";
-
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = getProductBySlug(slug || "");
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = () => {
+    if (product && product.status !== 'soldout') {
+      addToCart(product, quantity);
+      toast({ title: `${product.name} added to cart` });
+    }
+  };
 
   if (!product) {
     return (
-      <Layout cartCount={1}>
+      <Layout>
         <div className="px-6 lg:px-12 py-12 text-center">
           <h1 className="text-2xl">Product not found</h1>
         </div>
@@ -28,7 +38,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <Layout cartCount={1}>
+    <Layout>
       <div className="px-6 lg:px-12 py-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -147,6 +157,7 @@ const ProductDetail = () => {
                   variant="outline" 
                   className="w-full py-6 text-base"
                   disabled={product.status === 'soldout'}
+                  onClick={handleAddToCart}
                 >
                   {product.status === 'soldout' ? 'Sold out' : 'Add to cart'}
                 </Button>

@@ -30,7 +30,7 @@ const ShopAll = () => {
   });
 
   return (
-    <Layout cartCount={1}>
+    <Layout>
       <div className="px-6 lg:px-12 py-12">
         <div className="max-w-7xl mx-auto">
           {/* Page Title */}

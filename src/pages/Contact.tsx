@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <Layout cartCount={1}>
+    <Layout>
       <div className="px-6 lg:px-12 py-12">
         <div className="max-w-3xl mx-auto">
           {/* Page Title */}

@@ -5,7 +5,7 @@ import { products } from "@/data/products";
 
 const Index = () => {
   return (
-    <Layout cartCount={1}>
+    <Layout>
       <HeroSection />
       <DiscoverSection />
       <CategorySection />
