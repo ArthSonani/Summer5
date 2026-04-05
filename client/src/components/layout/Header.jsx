@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Search, User, ShoppingBag } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
+import { useAuth } from "@/context/AuthContext";
 
 const Header = ({ cartCount = 0 }) => {
+  const { user } = useAuth();
+
   return (
     <header className="w-full">
       {/* Announcement Bar */}
@@ -28,9 +31,20 @@ const Header = ({ cartCount = 0 }) => {
 
           {/* Account & Cart Icons */}
           <div className="flex items-center gap-4">
-            <Link to="/signup" className="p-2 hover:opacity-70 transition-opacity" aria-label="Account">
-              <User className="w-5 h-5" />
-            </Link>
+            {user ? (
+              <Link
+                to="/account"
+                className="p-2 hover:opacity-70 transition-opacity"
+                aria-label="Account"
+              >
+                <User className="w-5 h-5" />
+              </Link>
+            ) : (
+              <div className="flex items-center gap-3 text-sm">
+                <Link to="/login" className="hover:underline">Sign in</Link>
+                <Link to="/signup" className="hover:underline">Sign up</Link>
+              </div>
+            )}
             <Link to="/cart" className="p-2 hover:opacity-70 transition-opacity relative" aria-label="Cart">
               <ShoppingBag className="w-5 h-5" />
               {cartCount > 0 && (
@@ -52,11 +66,11 @@ const Header = ({ cartCount = 0 }) => {
             Shop All
           </NavLink>
           <NavLink 
-            to="/category/bathtubs" 
+            to="/category/bathroom" 
             className="hover:underline underline-offset-4"
             activeClassName="underline"
           >
-            Bathtubs
+            Bathrooms
           </NavLink>
           <NavLink 
             to="/category/kitchen" 

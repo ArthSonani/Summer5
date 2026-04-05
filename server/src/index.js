@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import passport from "passport";
 
 import authRoutes from "./routes/auth.js";
 import productRoutes from "./routes/products.js";
@@ -16,6 +17,7 @@ const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:5173";
 
 app.use(cors({ origin: clientOrigin }));
 app.use(express.json());
+app.use(passport.initialize());
 
 app.use("/api/health", healthRoutes);
 app.use("/api/auth", authRoutes);

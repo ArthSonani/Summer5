@@ -5,13 +5,13 @@ const HeroSection = () => {
   return (
     <section className="relative h-[80vh] min-h-[600px] w-full">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
+      <div
+        className="absolute inset-0 bg-cover bg-center object-fill"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&h=1080&fit=crop')`,
+          backgroundImage: "url('https://images.unsplash.com/photo-1628592102751-ba83b0314276?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fG1vZGVybiUyMGludGVyaW9yfGVufDB8fDB8fHwwfit=crop')"
         }}
       >
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Content */}
@@ -26,78 +26,137 @@ const HeroSection = () => {
 
 const DiscoverSection = () => {
   return (
-    <section className="py-20 px-6 text-center">
-      <h2 className="text-4xl md:text-5xl font-serif italic mb-8">
-        Crafted for the Discerning
-      </h2>
-      <Button asChild className="bg-primary text-primary-foreground px-12 py-6 text-base hover:bg-primary/90">
-        <Link to="/shop">Discover</Link>
-      </Button>
+    <section className="py-20 px-6 text-center ">
+      <div className="intersect-half intersect-once opacity-0 translate-y-10 
+              intersect:opacity-100 intersect:translate-y-0 
+              transition-all duration-700 ease-out">
+        <h2 className="text-4xl md:text-5xl font-serif mb-8 font-medium ">
+          Crafted for the Discerning
+        </h2>
+        <Button asChild className="bg-[#392720] px-12 py-6 transition-transform duration-100 hover:scale-105 rounded-xl shadow-xl shadow-gray-900/50">
+          <Link to="/shop">Discover</Link>
+        </Button>
+      </div>
     </section>
   );
 };
 
 const CategorySection = () => {
   return (
-    <section className="py-16 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-10 px-6 lg:px-12 bg-[#392720]">
+
+      <div className="max-w-7xl mx-auto py-2">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           {/* Image */}
-          <div className="aspect-[4/5] overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=1000&fit=crop" 
+          <div className="aspect-video overflow-hidden rounded-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3Dfit=crop"
               alt="Living Room"
               className="w-full h-full object-cover"
             />
           </div>
 
           {/* Content */}
-          <div className="lg:pl-12">
-            <span className="text-sm tracking-widest text-muted-foreground mb-4 block">
+          <div className="lg:pl-12 text-center md:text-left">
+            <span className="text-sm tracking-widest text-[#b3aeaa] mb-4 block font-medium">
               HOME ESSENTIALS
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif mb-6">
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white font-medium">
               Living Room
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className=" mb-8 text-[#b3aeaa] font-medium">
               Transform Your Living Room with Our High-Quality Decor Products.
             </p>
-            <Button variant="outline" asChild className="px-8 py-5 bg-transparent hover:bg-black/50 ">
+            <Button variant="outline" asChild className="px-8 py-5 bg-transparent hover:bg-white/50 text-white">
               <Link to="/category/living-room">Explore</Link>
+            </Button>
+          </div>
+
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto py-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          {/* Content */}
+          <div className="lg:pl-12 text-center md:text-left">
+            <span className="text-sm tracking-widest text-[#b3aeaa] mb-4 block font-medium">
+              HOME ESSENTIALS
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white font-medium">
+              Bathroom
+            </h2>
+            <p className=" mb-8 text-[#b3aeaa] font-medium">
+              Immerse Yourself in Luxury with our Premium Bathroom Collection.
+            </p>
+            <Button variant="outline" asChild className="px-8 py-5 bg-transparent hover:bg-white/50 text-white">
+              <Link to="/category/bathroom">Explore</Link>
+            </Button>
+          </div>
+
+          {/* Image */}
+          <div className="aspect-video overflow-hidden rounded-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aHJvb218ZW58MHx8MHx8fDA%3Dfit=crop"
+              alt="Bathroom"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto py-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          {/* Image */}
+          <div className="aspect-video overflow-hidden rounded-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1632583824020-937ae9564495?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGtpdGNoZW58ZW58MHx8MHx8fDA%3Dfit=crop"
+              alt="Kitchen"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          {/* Content */}
+          <div className="lg:pl-12 text-center md:text-left">
+            <span className="text-sm tracking-widest text-[#b3aeaa] mb-4 block font-medium">
+              HOME ESSENTIALS
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white font-medium">
+              Kitchen
+            </h2>
+            <p className=" mb-8 text-[#b3aeaa] font-medium">
+              Unleash your inner chef with Elegant Cookware and Upscale Kitchen Gadgets.
+            </p>
+            <Button variant="outline" asChild className="px-8 py-5 bg-transparent hover:bg-white/50 text-white">
+              <Link to="/category/kitchen">Explore</Link>
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
-};
-
-const KitchenSection = () => {
-  return (
-    <section className="py-16 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto py-2">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content - Left on desktop */}
-          <div className="lg:pr-12 order-2 lg:order-1">
-            <span className="text-sm tracking-widest text-muted-foreground mb-4 block">
+
+          {/* Content */}
+          <div className="lg:pl-12 text-center md:text-left">
+            <span className="text-sm tracking-widest text-[#b3aeaa] mb-4 block font-medium">
               HOME ESSENTIALS
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif mb-6">
-              Kitchen
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white font-medium">
+              Outdoor
             </h2>
-            <p className="text-muted-foreground mb-8">
-              Elevate Your Kitchen with Our Premium Essentials.
+            <p className=" mb-8 text-[#b3aeaa] font-medium">
+              Transform Your Outdoor with Our High-Quality Decor Products.
             </p>
-            <Button variant="outline" asChild className="px-8 py-5">
-              <Link to="/category/kitchen">Explore Kitchen</Link>
+            <Button variant="outline" asChild className="px-8 py-5 bg-transparent hover:bg-white/50 text-white">
+              <Link to="/category/outdoor">Explore</Link>
             </Button>
           </div>
 
-          {/* Image - Right on desktop */}
-          <div className="aspect-[4/3] overflow-hidden order-1 lg:order-2">
-            <img 
-              src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=800&h=600&fit=crop" 
-              alt="Kitchen"
+          {/* Image */}
+          <div className="aspect-video overflow-hidden rounded-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1602860739945-9a61573cd62d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGF0aW98ZW58MHx8MHx8fDA%3Dfit=crop"
+              alt="Bathroom"
               className="w-full h-full object-cover"
             />
           </div>
@@ -106,5 +165,4 @@ const KitchenSection = () => {
     </section>
   );
 };
-
-export { HeroSection, DiscoverSection, CategorySection, KitchenSection };
+export { HeroSection, DiscoverSection, CategorySection };

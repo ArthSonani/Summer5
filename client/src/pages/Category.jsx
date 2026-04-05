@@ -4,7 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import { getProductsByCategory } from "@/data/products";
 
 const categoryTitles = {
-  bathtubs: "Bathtubs",
+  bathroom: "Bathroom",
   kitchen: "Kitchen",
   "living-room": "Living Room",
   outdoor: "Outdoor",
